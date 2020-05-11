@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- My style sheet -->
+    <!-- CSS and Bootstrap -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     
     <title>Weather Dashboard</title>
 </head>
 <body>
 
     <!-- Nav heading -->
-    
+    <div class="bg-dark pt-2 pb-2">
+        <h1 class="text-center text-white">Weather Dashboard</h1>
+    </div>
     <!-- Main container -->
+        <main class="container">
+            <div class="row">
+                <!-- Search Div -->
+                <div class="col-lg-3 bg-light pt-3 pb-3">
+                    <h4>Search for city:</h4>
+                    <div class="input-group mb-3"> 
+                        <input type="text" class="form-control" placeholder="City Name">
+                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
         
-        <!-- Search Div -->
         
         <!-- Displayed City Div -->
     
     <!-- 5 day forcast container -->
     
     
-    <!--Bootstrap, jQuery and JS  -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- jQuery, JS and Font Awesome  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/a406f7ae75.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
