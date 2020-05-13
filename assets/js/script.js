@@ -8,18 +8,18 @@
 //uv index - ?????
 
 //user search
-var city = $("#searchCity").val().trim();
+var city = $("#searchCity").val();
 // API Key
 const apiKey = "&appid=5ae8fdb6f671ad1d9e8649e858708015";
 // API url
 // var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=&units=imperial&appid=" + city + apiKey;
 
 //search city
-$("#searchCity").on("click", function (event) {
+$("form").on("submit", function (event) {
     event.preventDefault()
-    var city = $("#searchCity").val().trim()
+    var city = $("#searchCity").val()
     $("searchCity").val("")
-    var quearyUrl = "https://api.openweathermap.org/data/2.5/weather?q=&units=imperial&" + city + apiKey;
+    var quearyUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + apiKey;
 
     $.ajax({
         url: quearyUrl,
@@ -28,11 +28,11 @@ $("#searchCity").on("click", function (event) {
     .then(function (response){
         console.log(response)
         console.log(response.name)
-        console.log(response.weather.icon)
+        console.log(response.weather[0].icon)
         console.log(response.main.temp)
         console.log(response.main.humidity)
         console.log(response.wind.speed)
-        console.log(response.main.uv)
+        // console.log(response.main.uv) still not working
     })
 })
 
