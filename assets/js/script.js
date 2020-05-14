@@ -35,7 +35,7 @@ function currentCity(city) {
         url: quearyUrl,
         method: "GET",
     }).then(function (response) {
-        $.get("http://api.openweathermap.org/data/2.5/uvi?"+apiKey+"&lat="+response.coord.lat+"&lon="+response.coord.lon, function (uv) {
+        $.get("https://api.openweathermap.org/data/2.5/uvi?"+apiKey+"&lat="+response.coord.lat+"&lon="+response.coord.lon, function (uv) {
             console.log(response);
             console.log(uv);
             console.log(response.weather[0].icon);
