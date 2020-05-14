@@ -19,6 +19,7 @@ var searches = JSON.parse(localStorage.getItem("searches")) || [];
 
 function searchHistory() {
     $("#history").empty();
+    if (searches.length === 0) return;
 
     for (var i = 0; i < searches.length; i++) {
         $("#history").prepend($("<p class='searchCity'>").text(searches[i]));
@@ -47,7 +48,7 @@ $("form").on("submit", function (event) {
             searchHistory();
         });
 
-    $(document).on("click", ".searchCity", function () {
+    $("#history").on("click", ".searchCity", function () {
         console.log($(this).text());
 
         currentCity();
@@ -67,3 +68,13 @@ function currentCity() {
     // $("#CurrentCity").append($("<p>").text("UV Index: " + ???)) also add color???
 }
 //5 day forecast
+function forecastFive() {
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + apiKey,
+        method: "GET"
+    })
+        .then(function (response) {
+            console.log(response)
+            $("#5DayForecast").empy();
+        })
+}
